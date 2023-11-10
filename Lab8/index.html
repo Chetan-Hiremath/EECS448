@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<title>Lab 8</title>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>Lab 8 </h2>
+</div>
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="Tab('Intro Page')">Intro Page</button>
+  <button class="w3-bar-item w3-button" onclick="Tab('Password Validator')">Password Validator</button>
+  <button class="w3-bar-item w3-button" onclick="Tab('Slide Show')">Slide Show</button>
+  <button class="w3-bar-item w3-button" onclick="Tab('Profile')">Profile</button>
+  <button class="w3-bar-item w3-button" onclick="Tab('CSS Manipulation')">CSS Manipulation</button>
+</div>
+
+<div id="Intro Page" class="w3-container tab">
+   <h1 style = "text-align: center;"> Intro Page </h1>
+   <title>Intro Page</title>
+   <p> Hello. This website contains the exercises for Lab 8. One tab contains one exercise, so you can click and see the tabs and try the exercises at the same time! Enjoy!</p>
+</div>
+
+<div id="Password Validator" class="w3-container tab" style="display:none">
+  <head>
+    <h1 style = "text-align: center;"> Password Validator </h1>
+    <title>PasswordValidator</title>
+  </head>
+  <body>
+  <script>
+        function Password()
+        {
+          var a = document.getElementById("passwords").value;
+          var b = document.getElementById("passwords2").value;
+          
+          if (a == "" || b == "")
+          {
+            alert("Fill the password!")
+            return false;
+          }
+          else if (a.length < 8)
+          {
+            alert("First Password's length is less than 8!")
+            return false;
+          }
+          else if (b.length < 8)
+          {
+            alert("Second Password's length is less than 8!")
+          }
+          else if (a != b)
+          {
+            alert("Passwords are not same! Try again")
+            return false;
+          }
+          else if (a == b)
+          {
+            alert("Passwords are same!")
+            return true;
+          }
+        }
+  </script>
+      <p><body>Enter a password on the first box, and re-enter the password on the second box for verification. The length of the password must be greater than or equal to 8.</body></p>
+  <form onsubmit = "Password()">
+    Password <input type = "password" id = "passwords" value = "">
+    <span id = "messages"> </span><br></br>
+    Confirm Password <input type = "password" id = "passwords2" value = "">
+    <span id = "messages"> </span><br></br>
+    <input type = "submit" value = "Validate">
+  </form>
+  </body>
+</div>
+
+<div id="Slide Show" class="w3-container tab" style="display:none">
+<head>
+  <h1 style = "text-align: center;"> Slide Show </h1>
+  <title>SlideShow</title>
+<style>
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+p {
+text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(39, 36, 36);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #e41515;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+</style>
+</head>
+<body>
+<p><body>The slide show displays the images of University of Kansas. So, enjoy the slide show!</body></p>
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <div class="numbertext">1 / 5</div>
+  <img src="https://ku.edu/sites/default/files/styles/full_width_medium/public/2022-04/basketball%20championship%20header_parade.jpg?h=c24ca1be&itok=6x0DaVC8" width="1000" height="500">
+  <div class="text">KU Picture 1 (Jayhawks National Championship Celebration)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">2 / 5</div>
+  <img src="https://ku.edu/sites/default/files/styles/full_width_medium/public/2018-01/about-ku-hero3x_0.jpg?h=6fe037f7&itok=pllFriW5" width="1000" height="500">
+  <div class="text">KU Picture 2 (Fraser Hall)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">3 / 5</div>
+  <img src="https://ceae.ku.edu/sites/engr.ku.edu/files/images/general/news/LEEP%202%20Exterior%20-%20Aug.%202015.jpg" width="1000" height="500">
+  <div class="text">KU Picture 3 (Engineering Complex)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">4 / 5</div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/KUStrongHallJayhawkMarch2006.jpg" width="1000" height="500">
+  <div class="text">KU Picture 4 (Strong Hall)</div>
+</div> 
+
+<div class="mySlides">
+  <div class="numbertext">5 / 5</div>
+  <img src="https://pbs.twimg.com/media/CiW5NKGVAAAqxpH.jpg" width="1000" height="500">
+  <div class="text">KU Picture 5 (Kansas Union Building)</div>
+</div>
+
+<button class="prev" onclick="moveSlides(-1)">Previous</button>
+<button class="next" onclick="moveSlides(1)">Next</button>
+
+</div>
+<br>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function moveSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) 
+  {
+    slideIndex = 1
+  }    
+  if (n < 1) 
+  {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) 
+  {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
+</body>
+</div>
+
+<div id="Profile" class="w3-container tab" style="display:none">
+  <head>
+    <h1 style = "text-align: center;"> Profile </h1>
+    <title>Profile</title>
+  </head>
+  <style>
+    img {
+        display: block;
+        margin-left: 0;
+        margin-right: auto;
+    }
+    p {
+        color: black;
+    }
+    a:hover
+    {
+       background-color: red;
+    }
+  </style>
+  <body>
+<img src="data:image/jpeg;base64,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" alt="Mario" align = "right" style= "width:300px; height:300px;">
+      <p>
+        This profile is about Mario. Mario is video game character of Nintendo. 
+        He is an Italian plumber of the Mushroom Kingdom, 
+        and he is the main protagonist in his games.
+        He saves Princess Peach of the Mushroom Kingdom when Bowser, 
+        the main antagonist, kindaps her.
+        He gets help from allies like Luigi, who is Mario's young brother, 
+        Toads, who are Princess Peach's mushroom-like servants, 
+        and Yoshi, who is a green dinosaur. Mario uses power-ups like fire flower, 
+        ice flower, tanooki leaf, mushroom, and acorn to fight Bowser's enemies. 
+        When Mario defeats Bowser, he resuces Princess Peach. Then, 
+        he is considered as a hero in the Mushroom Kingdom. 
+        He has several video games like Super Mario, Mario Kart, 
+        Super Smash Bros, Mario Party, and Super Mario 3D. 
+        He is one of most popular characters in the video game 
+        franchise, and he is the mascot of Nintendo. 
+        Nintendo is not strong without Mario since he is 
+        the most important character in Nintendo. 
+      </p>
+      <p>Here are the websites that are related to Mario: </p>
+      <p><a href = "https://www.nintendo.com/" >         Nintendo       </a> </p>
+      <p><a href = "https://mariokart8.nintendo.com/">Mario Kart 8 Deluxe</a></p>
+      <p><a href = "https://www.smashbros.com/en_US/">Super Smash Bros</a></p>
+      <p>Super Mario Odyssey Full Gameplay Video</p>
+      <iframe width = "500" height = "300" src = "https://www.youtube.com/embed/sgHDIUxR23E"></iframe>
+  </body>
+</div>
+
+
+<div id="CSS Manipulation" class="w3-container tab" style="display:none">
+  <head>
+    <h1 style = "text-align: center;"> CSS Manipulation </h1>
+    <title>CSSManipulation</title>
+  </head>
+  <style>
+    #myElement {
+            border:2px solid #CCC;
+            width:1000px;
+            height:250px;
+        }
+  </style>
+  <body>
+    <p><body>You can type any color for the background on this box. If you want to change the background of a color in terms of RGB, enter rgb(red value, blue value, green value) on the box. Values must be between 0 and 255 since negative values are not allowed.</body></p>
+    <input type = "text" id = "colorInputText">
+    <p1><input type = "button" id = "colorButton" value = "Click to change the background color" onclick = "changeBackgroundColor()"></p1>
+    <div id="myElement">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <br>
+    <p>This dummy text paragraph is borrowed from Lorem Ipsum.</p>
+    <p><body>You can type any color for the border on this box. If you want to change the border of a color in terms of RGB, enter rgb(red value, blue value, green value) on the box. Values must be between 0 and 255 since negative values are not allowed.</body></p>
+    <input type = "text" id = "colorInputText2">
+    <p2><input type= "button" id = "colorButton" value = "Click to change the border color" onclick= "changeBorderColor()"></p2>
+    <p><body>You can type any style of border on this box. But type words, not numerical values. Also, words must be valid! (Ex- dotted thin, dashed, solid thick, double, and hidden) When you change the border style, the color of the border will be black. So, make sure that you change the color of the border. </body></p>
+    <input type = "text" id = "widthInputText">
+    <p3><input type= "button" id = "widthButton" value = "Click to change the border width" onclick= "changeBorderWidth()"></p3>
+  </body>
+  <script>
+    function changeBackgroundColor()
+    {
+        let color = document.getElementById('colorInputText').value;
+        document.body.style.backgroundColor = color;
+    }
+    function changeBorderColor()
+    {
+        let color = document.getElementById('colorInputText2').value; 
+        document.getElementById("myElement").style.borderColor = color;
+    }
+    function changeBorderWidth()
+    {
+        let width = document.getElementById('widthInputText').value; 
+        document.getElementById("myElement").style.border = width;
+    }
+    </script>
+  </script>
+</body>
+</div>
+
+
+<script>
+function Tab(tabName) {
+  var i;
+  var x = document.getElementsByClassName("tab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(tabName).style.display = "block";  
+}
+</script>
+
+</body>
+</html>

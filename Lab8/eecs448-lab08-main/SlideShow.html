@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <h1 style = "text-align: center;"> Slide Show </h1>
+  <title>SlideShow</title>
+<style>
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+p {
+text-align: center;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(39, 36, 36);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #e41515;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+</style>
+</head>
+<body>
+<p><body>The slide show displays the images of University of Kansas. So, enjoy the slide show!</body></p>
+<div class="slideshow-container">
+
+<div class="mySlides">
+  <div class="numbertext">1 / 5</div>
+  <img src="https://ku.edu/sites/default/files/styles/full_width_medium/public/2022-04/basketball%20championship%20header_parade.jpg?h=c24ca1be&itok=6x0DaVC8" width="1000" height="500">
+  <div class="text">KU Picture 1 (Jayhawks National Championship Celebration)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">2 / 5</div>
+  <img src="https://ku.edu/sites/default/files/styles/full_width_medium/public/2018-01/about-ku-hero3x_0.jpg?h=6fe037f7&itok=pllFriW5" width="1000" height="500">
+  <div class="text">KU Picture 2 (Fraser Hall)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">3 / 5</div>
+  <img src="https://ceae.ku.edu/sites/engr.ku.edu/files/images/general/news/LEEP%202%20Exterior%20-%20Aug.%202015.jpg" width="1000" height="500">
+  <div class="text">KU Picture 3 (Engineering Complex)</div>
+</div>
+
+<div class="mySlides">
+  <div class="numbertext">4 / 5</div>
+  <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/KUStrongHallJayhawkMarch2006.jpg" width="1000" height="500">
+  <div class="text">KU Picture 4 (Strong Hall)</div>
+</div> 
+
+<div class="mySlides">
+  <div class="numbertext">5 / 5</div>
+  <img src="https://pbs.twimg.com/media/CiW5NKGVAAAqxpH.jpg" width="1000" height="500">
+  <div class="text">KU Picture 5 (Kansas Union Building)</div>
+</div>
+
+<button class="prev" onclick="moveSlides(-1)">Previous</button>
+<button class="next" onclick="moveSlides(1)">Next</button>
+
+</div>
+<br>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function moveSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) 
+  {
+    slideIndex = 1
+  }    
+  if (n < 1) 
+  {
+    slideIndex = slides.length
+  }
+  for (i = 0; i < slides.length; i++) 
+  {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+</script>
+</body>
+</html> 

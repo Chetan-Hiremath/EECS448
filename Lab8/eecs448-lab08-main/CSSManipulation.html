@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <h1 style = "text-align: center;"> CSS Manipulation </h1>
+    <title>CSSManipulation</title>
+  </head>
+  <style>
+    #myElement {
+            border:2px solid #CCC;
+            width:1000px;
+            height:250px;
+        }
+  </style>
+  <body>
+    <p><body>You can type any color for the background on this box. If you want to change the background of a color in terms of RGB, enter rgb(red value, blue value, green value) on the box. Values must be between 0 and 255 since negative values are not allowed.</body></p>
+    <input type = "text" id = "colorInputText">
+    <p1><input type = "button" id = "colorButton" value = "Click to change the background color" onclick = "changeBackgroundColor()"></p1>
+    <div id="myElement">"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"</div>
+    <br>
+    <p>This dummy text paragraph is borrowed from Lorem Ipsum.</p>
+    <p><body>You can type any color for the border on this box. If you want to change the border of a color in terms of RGB, enter rgb(red value, blue value, green value) on the box. Values must be between 0 and 255 since negative values are not allowed.</body></p>
+    <input type = "text" id = "colorInputText2">
+    <p2><input type= "button" id = "colorButton" value = "Click to change the border color" onclick= "changeBorderColor()"></p2>
+    <p><body>You can type any style of border on this box. But type words, not numerical values. Also, words must be valid! (Ex- dotted thin, dashed, solid thick, double, and hidden) When you change the border style, the color of the border will be black. So, make sure that you change the color of the border. </body></p>
+    <input type = "text" id = "widthInputText">
+    <p3><input type= "button" id = "widthButton" value = "Click to change the border width" onclick= "changeBorderWidth()"></p3>
+  </body>
+  <script>
+    function changeBackgroundColor()
+    {
+        let color = document.getElementById('colorInputText').value;
+        document.body.style.backgroundColor = color;
+    }
+    function changeBorderColor()
+    {
+        let color = document.getElementById('colorInputText2').value; 
+        document.getElementById("myElement").style.borderColor = color;
+    }
+    function changeBorderWidth()
+    {
+        let width = document.getElementById('widthInputText').value; 
+        document.getElementById("myElement").style.border = width;
+    }
+    </script>
+  </script>
+</body>
+</html>
