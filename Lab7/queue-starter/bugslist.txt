@@ -1,0 +1,9 @@
+Best Guesses of the Bugs: 
+
+The bug might be in one of the files. If I run the files when I modify the files and create the Test class, the terminal shows me that the clock skew is detected. The build may be incomplete. Therefore, the possible reason is that there might be a big in one of the files.
+
+The bug might be in Dequeue because it is supposed to remove an element from the back of the queue, but it is removing that element from the front of the queue. If Dequeue works, then the peekFront function should be false. 
+
+The bug might be in Enqueue because it is supposed to add an element to the back of the queue, but it is adding that element to the front of the queue. It shows that the test is passed by the peekFront function. If Enqueue works, the peekFront function should be false.
+
+
