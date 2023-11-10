@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<title>Lab 10</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+
+<div class="w3-container">
+  <h2>Lab 10</h2>
+</div>
+
+<div class="w3-bar w3-black">
+  <button class="w3-bar-item w3-button" onclick="tabName('Intro')">Intro</button>
+  <button class="w3-bar-item w3-button" onclick="tabName('Create User')">Create User</button>
+  <button class="w3-bar-item w3-button" onclick="tabName('Create Post')">Create Post</button>
+  <button class="w3-bar-item w3-button" onclick="tabName('Administrator')">Administrator</button>
+</div>
+
+<div id="Intro" class="w3-container city">
+   <h1 style = "text-align: center;"> Intro Page </h1>
+   <title>Intro Page</title>
+   <p style = "text-align: center;"> Hello. This website contains the exercises for Lab 10. One tab contains one exercise, so you can click and see the tabs and try the exercises at the same time! Enjoy!</p>
+</div>
+
+<div id="Create User" class="w3-container city" style="display:none">
+  <h2>Create User</h2>
+  <body>
+  <script>
+        function submitUser()
+        {
+          var a = document.getElementById("name").value;          
+          if (a == "")
+          {
+            alert("Username should not be empty!")
+            return false;
+          }
+        }
+  </script>
+      <p style = 'font-weight:bold'>Enter the name of the new user: </p>
+      <form action = "CreateUser.php" method = "POST" onsubmit = " return submitUser()">
+        <p style = 'font-weight:bold'>Account: </p>
+        Name: <input type = "text" id = "name" name = "name" value = "">
+        <input type = "submit" value = "Submit User">
+        <input type = "reset" value = "Reset">
+      </form>
+  </body>
+</div>
+
+<div id="Create Post" class="w3-container city" style="display:none">
+  <h2>Create Post</h2>
+  <body>
+      <p style = 'font-weight:bold'>Enter the new post of the user: </p>
+       <form action = "CreatePost.php" method = "POST">
+        <p style = 'font-weight:bold'>Account: </p>
+        Name: <input type = "text"  name = "name"></br>
+        Post: <input type = "text"  name = "post" style = "height:150px"></br>
+        <input type = "submit" value = "Post">
+        <input type = "reset" value = "Reset">
+       </form>
+   </body>
+</div>
+
+<div id="Administrator" class="w3-container city" style="display:none">
+  <h2>Administrator</h2>
+  <body>
+    <p style = 'font-weight:bold'>Use the links for administration: </p>
+     <p><a href="https://people.eecs.ku.edu/~c743h357/ViewUsers.php">View Users</a></p>
+     <p><a href="https://people.eecs.ku.edu/~c743h357/ViewUserPosts.php">View User Posts</a></p>
+     <p><a href="https://people.eecs.ku.edu/~c743h357/DeletePost.html">Delete Posts</a></p>
+   </body>
+</div>
+
+<script>
+function tabName(tab) {
+  var i;
+  var x = document.getElementsByClassName("city");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  document.getElementById(tab).style.display = "block";  
+}
+</script>
+
+</body>
+</html>
